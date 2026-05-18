@@ -1,19 +1,20 @@
 package cmd
 
-import(
+import (
 	"fmt"
 	"taskmanager/storage"
-	
+
 	"github.com/spf13/cobra"
 )
+
 var listCmd = &cobra.Command{
 	Use:   "list",
 	Short: "List all tasks",
 	Long:  "Display a list of all tasks with their details.",
-	Run: func(cmd*cobra.Command, args []string){
+	Run: func(cmd *cobra.Command, args []string) {
 		tasks, err := storage.LoadTasks()
-		if err != nil{
-			fmt.Println("Error fetching tasks:",err)
+		if err != nil {
+			fmt.Println("Error fetching tasks:", err)
 			return
 		}
 		if len(tasks) == 0 {
@@ -27,6 +28,6 @@ var listCmd = &cobra.Command{
 	},
 }
 
-func init(){
+func init() {
 	rootCmd.AddCommand(listCmd)
 }

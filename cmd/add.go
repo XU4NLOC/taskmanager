@@ -2,21 +2,21 @@ package cmd
 
 import (
 	"fmt"
-	"time"
 	"taskmanager/storage"
-	
+	"time"
+
 	"github.com/spf13/cobra"
 )
 
 var addCmd = &cobra.Command{
 	Use:   "add [task title]",
 	Short: "Add a new task",
-	Long: "Create a new task with the specified title.",
+	Long:  "Create a new task with the specified title.",
 	Args:  cobra.MinimumNArgs(1),
-	Run: func(cmd*cobra.Command, args []string){
+	Run: func(cmd *cobra.Command, args []string) {
 		title := args[0]
 		tasks, err := storage.LoadTasks()
-		if err != nil{
+		if err != nil {
 			fmt.Println("Error loading tasks:", err)
 			return
 		}
@@ -35,6 +35,6 @@ var addCmd = &cobra.Command{
 	},
 }
 
-func init(){
+func init() {
 	rootCmd.AddCommand(addCmd)
 }
