@@ -94,4 +94,3 @@ Tasks are stored locally at `~/.tasks.json` in a human-readable format:
 ## Motivation
 
 This project is part of my journey to master Go and transition into backend/systems engineering. It covers core Go concepts including structs, interfaces, file I/O, JSON encoding, and CLI design patterns.
-# taskmanager
